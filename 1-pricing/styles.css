@@ -5,13 +5,14 @@
 }
 
 :root {
---primary-color: #2563eb
+--primary-color: #2563eb;
+--text-color: #0f172a
 }
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background: #f1f5f9;
-  color: #0f172a;
+  color: var(--text-color);
   padding: 40px 20px;
 }
 
@@ -71,7 +72,7 @@ body {
 .price {
   font-size: 40px;
   font-weight: 700;
-  color: #f8fafc;
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 
