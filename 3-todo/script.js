@@ -40,6 +40,18 @@ function clearCompleted() {
 }
 
 function getVisibleTasks() {
+  switch (currentFilter) {
+    case 'all': 
+    return tasks;
+    break;
+    case 'active':
+    return tasks.filter(({done}) => !done);
+    break;
+    case 'done': 
+    return tasks.filter(({done}) => done);
+    break;
+  }
+
   return tasks;
 }
 
