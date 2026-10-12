@@ -42,7 +42,6 @@ function addToCart(id) {
     cart.push({ id: product.id, name: product.name, price: product.price, qty: 1 });
   }
   
-  console.log(cart);
   renderCart();
 }
 
@@ -108,7 +107,7 @@ function renderCart() {
 
   badgeEl.textContent = itemsCount;
   totalEl.textContent = total;
-  emptyMsg.hidden = true;
+  emptyMsg.hidden = cart.length > 0 ? true: false;
 }
 
 promoBtn.addEventListener("click", applyPromo);
