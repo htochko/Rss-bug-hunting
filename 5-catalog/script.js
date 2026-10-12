@@ -40,6 +40,9 @@ function getFiltered() {
 }
 
 function render() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
   const items = getFiltered();
   items.forEach((p) => {
     const card = document.createElement("div");
@@ -50,7 +53,7 @@ function render() {
   countEl.textContent = products.length;
 }
 
-searchInput.addEventListener("input", render);
+searchInput.addEventListener("change", render);
 categorySelect.addEventListener("change", render);
 sortSelect.addEventListener("change", render);
 
