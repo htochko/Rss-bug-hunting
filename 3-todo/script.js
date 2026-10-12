@@ -35,7 +35,7 @@ function deleteTask(id) {
 }
 
 function clearCompleted() {
-  tasks = [];
+  tasks = tasks.filter(({done}) => !done);
   render();                 
 }
 
@@ -60,7 +60,7 @@ function updateCounter() {
 }
 
 function render() {
-  // remove rendered before
+  // remove rendered before for bug 9
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
